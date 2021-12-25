@@ -2,3 +2,25 @@ server:
   # start services on random port by default
   port: 0
   shutdown: graceful
+
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+
+management:
+  security:
+    enabled: false
+  endpoint:
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    export:
+      prometheus:
+        enabled: true
